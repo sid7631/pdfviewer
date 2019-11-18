@@ -1,0 +1,323 @@
+
+  
+  
+
+
+#outerContainer {
+    width:100%;
+    height:100%;
+    position: relative;
+}
+
+
+#mainContainer {
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    min-width: 320px;
+}
+
+.toolbar {
+    position: relative;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    cursor: default;
+}
+
+#toolvarContainer {
+    width: 100%;
+}
+
+#toolbarContainer, .findbar, .secondaryToolbar {
+    position: relative;
+    height: 32px;
+    background-color: #474747;
+    /* fallback */
+    background-image: url(images/texture.png), -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 32%, .99)), to(hsla(0, 0%, 27%, .95)));
+    background-image: url(images/texture.png), linear-gradient(hsla(0, 0%, 32%, .99), hsla(0, 0%, 27%, .95));
+}
+
+#toolbarContainer, .findbar, .secondaryToolbar {
+    box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, .15), inset 0 -1px 0 hsla(0, 0%, 100%, .05), 0 2px 0 hsla(0, 0%, 0%, .15), 0 1px 1px hsla(0, 0%, 0%, .1);
+}
+
+html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar {
+    box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, .15), inset 0 -1px 0 hsla(0, 0%, 100%, .05), 0 1px 0 hsla(0, 0%, 0%, .15), 0 1px 1px hsla(0, 0%, 0%, .1);
+}
+
+html[dir='rtl'] #toolbarContainer, .findbar, .secondaryToolbar {
+    box-shadow: inset 0 1px 1px hsla(0, 0%, 0%, .15), inset 0 -1px 0 hsla(0, 0%, 100%, .05), 0 1px 0 hsla(0, 0%, 0%, .15), 0 1px 1px hsla(0, 0%, 0%, .1);
+}
+
+#toolbarViewer {
+    height: 32px;
+    border: 1px solid hsla(0,0%,0%,.35);
+    border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+}
+
+
+
+
+
+#viewContainer{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    left: 0;
+    outline: none;
+    height: 90vh;
+    background-color: #474747 !important;
+    overflow: scroll !important;
+
+
+    
+}
+
+
+
+
+.pdfViewer .canvasWrapper {
+    overflow: hidden;
+}
+
+.pdfViewer .page {
+    direction: ltr;
+    width: 47vw;
+    height: 1056px;
+    margin: 1px auto -8px auto;
+    position: relative;
+    overflow: scroll;
+    border: 9px solid transparent;
+    background-clip: content-box;
+    -webkit-border-image: url(images/shadow.png) 9 9 repeat;
+    -o-border-image: url(images/shadow.png) 9 9 repeat;
+    border-image: url(images/shadow.png) 9 9 repeat;
+    background-color: white;
+}
+
+
+.pdfViewer .page .loadingIcon {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/loading-icon.gif') center no-repeat;
+}
+
+
+.toolbarButton, .dropdownToolbarButton, .secondaryToolbarButton, .overlayButton {
+    min-width: 16px;
+    padding: 2px 6px 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: hsla(0,0%,100%,.8);
+    font-size: 12px;
+    line-height: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-transition-property: background-color, border-color, box-shadow;
+    transition-property: background-color, border-color, box-shadow;
+    -webkit-transition-duration: 150ms;
+    transition-duration: 150ms;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+
+.toolbarButton, .secondaryToolbarButton, .overlayButton {
+    border: 0 none;
+    background: none;
+    width: 32px;
+    height: 25px;
+}
+
+.toolbarButton::before, .secondaryToolbarButton::before {
+    position: absolute;
+    display: inline-block;
+    top: 4px;
+    left: 7px;
+}
+
+input, button, select {
+    font: message-box;
+    outline: none !important;
+}
+
+
+
+#toolbarViewerMiddle {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+
+}
+
+html[dir='rtl'] #toolbarViewerLeft > *,
+html[dir='rtl'] #toolbarViewerMiddle > *,
+html[dir='rtl'] #toolbarViewerRight > *,
+html[dir='rtl'] .findbar * {
+  position: relative;
+}
+
+html[dir='ltr'] .splitToolbarButton {
+  margin: 3px 2px 4px 0;
+  display: inline-block;
+}
+html[dir='rtl'] .splitToolbarButton {
+  margin: 3px 0 4px 2px;
+  display: inline-block;
+}
+html[dir='ltr'] .splitToolbarButton > .toolbarButton {
+  border-radius: 0;
+  float: left;
+}
+html[dir='rtl'] .splitToolbarButton > .toolbarButton {
+  border-radius: 0;
+  float: right;
+}
+
+
+
+html[dir='ltr'] .splitToolbarButton {
+    margin: 3px 2px 4px 0;
+    display: inline-block;
+  }
+  html[dir='rtl'] .splitToolbarButton {
+    margin: 3px 0 4px 2px;
+    display: inline-block;
+  }
+  html[dir='ltr'] .splitToolbarButton > .toolbarButton {
+    border-radius: 0;
+    float: left;
+  }
+  html[dir='rtl'] .splitToolbarButton > .toolbarButton {
+    border-radius: 0;
+    float: right;
+  }
+
+  .splitToolbarButton.toggled .toolbarButton {
+    margin: 0;
+  }
+
+
+
+.splitToolbarButton:hover > .toolbarButton,
+.splitToolbarButton:focus > .toolbarButton,
+.splitToolbarButton.toggled > .toolbarButton,
+.toolbarButton.textButton {
+  background-color: hsla(0,0%,0%,.12);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0,0%,100%,.05)), to(hsla(0,0%,100%,0)));
+  background-image: linear-gradient(hsla(0,0%,100%,.05), hsla(0,0%,100%,0));
+  background-clip: padding-box;
+  border: 1px solid hsla(0,0%,0%,.35);
+  border-color: hsla(0,0%,0%,.32) hsla(0,0%,0%,.38) hsla(0,0%,0%,.42);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.15) inset,
+              0 1px 0 hsla(0,0%,100%,.05);
+  -webkit-transition-property: background-color, border-color, box-shadow;
+  transition-property: background-color, border-color, box-shadow;
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+
+}
+.splitToolbarButton > .toolbarButton:hover,
+.splitToolbarButton > .toolbarButton:focus,
+.dropdownToolbarButton:hover,
+.overlayButton:hover,
+.overlayButton:focus,
+.toolbarButton.textButton:hover,
+.toolbarButton.textButton:focus {
+  background-color: hsla(0,0%,0%,.2);
+  box-shadow: 0 1px 0 hsla(0,0%,100%,.05) inset,
+              0 0 1px hsla(0,0%,100%,.15) inset,
+              0 0 1px hsla(0,0%,0%,.05);
+  z-index: 199;
+}
+.splitToolbarButton > .toolbarButton {
+  position: relative;
+}
+html[dir='ltr'] .splitToolbarButton > .toolbarButton:first-child,
+html[dir='rtl'] .splitToolbarButton > .toolbarButton:last-child {
+  position: relative;
+  margin: 0;
+  margin-right: -1px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-right-color: transparent;
+}
+html[dir='ltr'] .splitToolbarButton > .toolbarButton:last-child,
+html[dir='rtl'] .splitToolbarButton > .toolbarButton:first-child {
+  position: relative;
+  margin: 0;
+  margin-left: -1px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left-color: transparent;
+}
+.splitToolbarButtonSeparator {
+  padding: 8px 0;
+  width: 1px;
+  background-color: hsla(0,0%,0%,.5);
+  z-index: 99;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.08);
+  display: inline-block;
+  margin: 5px 0;
+}
+html[dir='ltr'] .splitToolbarButtonSeparator {
+  float: left;
+}
+html[dir='rtl'] .splitToolbarButtonSeparator {
+  float: right;
+}
+.splitToolbarButton:hover > .splitToolbarButtonSeparator,
+.splitToolbarButton.toggled > .splitToolbarButtonSeparator {
+  padding: 12px 0;
+  margin: 1px 0;
+  box-shadow: 0 0 0 1px hsla(0,0%,100%,.03);
+  -webkit-transition-property: padding;
+  transition-property: padding;
+  -webkit-transition-duration: 10ms;
+          transition-duration: 10ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.toolbarButton,
+.dropdownToolbarButton,
+.secondaryToolbarButton,
+.overlayButton {
+  min-width: 16px;
+  padding: 2px 6px 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: hsla(0,0%,100%,.8);
+  font-size: 12px;
+  line-height: 14px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Opera does not support user-select, use <... unselectable="on"> instead */
+  cursor: default;
+  -webkit-transition-property: background-color, border-color, box-shadow;
+  transition-property: background-color, border-color, box-shadow;
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+

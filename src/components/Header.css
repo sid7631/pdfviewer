@@ -1,0 +1,15 @@
+#Header{
+    /* padding: 0.2rem 0; */
+    background-color: #474747;
+}
+
+
+.customHeader {
+    min-width: 3rem !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+
+
+
